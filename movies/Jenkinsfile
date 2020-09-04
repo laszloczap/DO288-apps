@@ -104,7 +104,7 @@ pipeline {
                         }
                         echo "Deployment to dev is complete. "
                     }
-        }
+        }}
 
         stage('Promote to Staging Env') {
             steps {
