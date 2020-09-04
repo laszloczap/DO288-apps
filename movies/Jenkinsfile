@@ -111,12 +111,10 @@ pipeline {
                 timeout(time: 60, unit: 'MINUTES') {
                     input message: "Promote to Staging?"
                 }
-                script {
-                    openshift.withCluster() {
                     // TODO: Tag the ${APP_NAME}:latest image stream in the dev env as ${APP_NAME}:stage in staging
 		sh '''
 			oc tag ${APP_NAME}:latest ${APP_NAME}:stage
-                    }
+                    
                 }
             }
         }
