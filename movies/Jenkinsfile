@@ -114,9 +114,9 @@ pipeline {
                     // TODO: Tag the ${APP_NAME}:latest image stream in the dev env as ${APP_NAME}:stage in staging
 		sh '''
 			oc tag ${APP_NAME}:latest ${APP_NAME}:stage
+		'''
                     
                 }
-            }
         }
 
         stage('Deploy to Staging Env') {
