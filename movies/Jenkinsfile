@@ -114,7 +114,8 @@ pipeline {
                 }
                     // TODO: Tag the ${APP_NAME}:latest image stream in the dev env as ${APP_NAME}:stage in staging
 		sh '''
-			oc tag ${APP_NAME}:latest ${APP_NAME}:stage
+			oc project ${DEV_PROJECT}
+			oc tag ${APP_NAME}:latest ${STAGE_PROJECT}/${APP_NAME}:stage
 		'''
                     
                 }
